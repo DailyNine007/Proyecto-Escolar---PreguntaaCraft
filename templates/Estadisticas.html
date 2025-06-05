@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas</title>
+
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilosEstadisticas.css') }}">
+
+</head>
+<body>
+
+    <!--Boton para regresar al menu principal-->
+    <div class="BotonArriba">
+        <a href="{{ url_for('menu') }}" class="Regresar">← Regresar a Inicio</a>
+    </div>
+
+    <!--Contendores para mostrar estadisticas-->
+    <div class="contenedor-estadisticas">
+        <h1>📊 Estadísticas del Jugador</h1>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>✅ Respuestas correctas</h3>
+                <p id="respuestasCorrectas">0</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>❌ Respuestas incorrectas</h3>
+                <p id="respuestasIncorrectas">0</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>⏱️ Tiempo Promedio De Respuestas</h3>
+                <p id="tiempoPromedioJuego">--:--</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>⭐ Rango</h3>
+                <p id="rangoJugador"></p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+        <!--Obtener datos del servidor y actualizar automáticamente-->
+    <script>
+        async function cargarEstadisticas() {
+            try {
+                //Se hace una petición HTTP GET a /api/estadisticas, que es la ruta en tu servidor Flask que devuelve las estadísticas más recientes.
+                const respuesta = await fetch('/api/estadisticas?nocache=' + new Date().getTime());
+                const datos = await respuesta.json();
+                console.log("📥 Datos recibidos:", datos);
+                
+                //Actualiza el contenido del elemento <p id="respuestasCorrectas"> con el valor correspondiente del servidor.
+                document.getElementById('respuestasCorrectas').textContent = datos.respuestasCorrectas;
+                document.getElementById('respuestasIncorrectas').textContent = datos.respuestasIncorrectas;
+                document.getElementById('tiempoPromedioJuego').textContent = datos.tiempoPromedioJuego;
+                document.getElementById('rangoJugador').textContent = datos.rangoJugador;
+            } catch (error) {
+                console.error('Error al obtener estadísticas:', error);
+            }
+        }
+
+        //Cargar al entrar
+        cargarEstadisticas();
+
+        setInterval(cargarEstadisticas, 5000);
+    </script>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a PreguntaaCraft</title>
+    
+    <!--Archivo Css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilosMenu.css') }}">
+
+</head>
+<body>
+    
+    <!--Barra Superior-->
+    <div class="barraSuperior">
+        
+        <!--Nombre la aplicacion en barra superior-->
+        <a href="" class="Logo">PreguntaasCraft ✔</a>
+
+        <nav class="barraNav">
+
+            <ul>
+                <li><a href="{{ url_for('mostrar_estadisticas') }}">⭐ Estadisticas De Jugador ⭐</a></li>
+            </ul>
+            
+        </nav>
+
+    </div>
+
+
+    <!--Contenido Fuerte de la pagina-->
+    <div class="contenedor">
+
+        <div class="titulo">
+            <h1>PreguntaasCraft</h1>
+        </div>
+
+        <div class="categorias">
+
+            <div class="categoria">
+                <img src="{{ url_for('static', filename='estilos/imagenes/Historia.png') }}" alt="">
+                <button>HISTORIA</button>
+            </div>
+
+            <div class="categoria">
+                <img src="{{ url_for('static', filename='estilos/imagenes/Artes.png') }}" alt="" >
+                <button>ARTE</button>
+            </div>
+
+            <div class="categoria">
+                <img src="{{ url_for('static', filename='estilos/imagenes/Deportes.png') }}" alt="">
+                <button>DEPORTE</button>
+            </div>
+
+            <div class="categoria">
+                <img src="{{ url_for('static', filename='estilos/imagenes/Matematicas.png') }}" alt="">
+
+                <a href="{{ url_for('matematicas') }}">
+                    <button>MATEMATICAS</button>
+                </a>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+    <!--Pie de pagina-->
+    <footer class="pie-pagina">
+        <p>
+            Al acceder a cualquiera de los cuatro cursos, participarás en un minijuego de preguntas diseñado para evaluar tus habilidades en la materia. 
+            Tus respuestas serán registradas en una base de datos para analizar tu desempeño, considerando tanto la precisión de tus respuestas como el tiempo de reacción. 
+            Con base en estos datos, se estimará un puntaje representativo de tu nivel de razonamiento.
+        </p>
+    </footer>
+
+
+
+
+
+</body>
+</html>

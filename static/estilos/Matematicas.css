@@ -1,0 +1,131 @@
+#ContenedorVideojuego{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /*Altura del contenedor*/
+    background-image: url('imagenes/Espacio.jpg'); 
+    background-size: cover; /*Ajusta la imagen para cubrir todo el contenedor*/
+    background-position: center;
+    background-repeat: no-repeat; 
+    position: relative;
+    z-index: 0; /*Asegurar que la imagen este detras de todos los elementos en pantalla*/
+    color: white;
+    padding-top: 50px;
+    box-sizing: border-box;
+    transition: background-image 3s ease-in-out;
+}
+
+#pantallaInicio h2{
+    font-size: 35px;
+    font-family: cursive;
+}
+
+
+.BotonMenu{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.BotonMenu button{
+    background: linear-gradient(145deg, #00f0ff, #0077ff);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.BotonMenu button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+.BotonMenu button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/* Botón central */
+.centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centro button {
+    background: linear-gradient(145deg, #00f0ff, #0077ff);
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+#cronometro {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    display: none;
+}
+
+#preguntaContainer {
+    text-align: center;
+    margin-top: 100px;
+    display: none;
+}
+
+#preguntaTexto {
+    font-size: 45px;
+    margin-bottom: 30px;
+    font-family: cursive;
+}
+
+#opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#opciones button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#opciones button.correcta {
+    background-color: #00f0ff;
+    color: white;
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+#opciones button.incorrecta {
+    background-color: #ff3c3c;
+    color: white;
+    box-shadow: 0 0 10px #ff3c3c;
+}

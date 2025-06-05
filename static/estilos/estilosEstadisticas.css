@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a2c4f4, #3b6ea5);
+    color: #fff;
+}
+
+.BotonArriba{
+    background-color: #245b63;
+    padding: 15px 20px;
+    text-align: right;
+}
+
+.Regresar{
+    background-color: #fff;
+    color: #245b63;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.Regresar:hover{
+    background-color: #e6e6e6;
+}
+
+.contenedor-estadisticas{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor-estadisticas h1{
+    margin-bottom: 40px;
+    font-size: 32px;
+    background-color: #245b63;
+    padding: 10px 30px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tarjeta{
+    background-color: #ffffffcc;
+    border-radius: 15px;
+    padding: 20px;
+    color: #245b63;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.tarjeta:hover{
+    transform: scale(1.05);
+}
+
+.tarjeta h3{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.tarjeta p{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematicas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/Matematicas.css') }}">
+
+</head>
+
+
+
+<body>
+
+    <div id="ContenedorVideojuego">
+
+        <div class="BotonMenu">
+            <button>
+                <a href="{{ url_for('menu') }}">Menu Principal</a>
+            </button>
+        </div>
+
+        <!--Sonido de menu principal-->
+        <audio id="VideojuegoAudio" autoplay loop>
+            <source src="{{ url_for('static', filename='Sonido/SpaceLand.mp3') }}" type="audio/mpeg">
+        </audio>
+
+        <!--FORZAR EL INICIO DEL AUDIO-->
+        <div id="pantallaInicio" onclick="iniciarAudio()">
+            <h2></h2>
+        </div>
+
+
+
+
+
+
+        <!-- Botón de inicio -->
+        <div id="botonInicio" class="centro">
+            <button onclick="iniciarJuego()">MATEMÁTICAS</button>
+        </div>
+
+        <!-- Cronómetro -->
+        <div id="cronometro">01:00</div>
+
+        <!-- Pregunta y opciones -->
+        <div id="preguntaContainer">
+            <div id="preguntaTexto"></div>
+            <div id="opciones"></div>
+        </div>
+
+        
+
+    </div>
+
+
+
+
+    <!--JS Del videojuego-->
+    <script src="{{ url_for('static', filename='js/Matematicas.js') }}"></script>
+    
+</body>
+</html>
