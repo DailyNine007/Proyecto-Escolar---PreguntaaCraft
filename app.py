@@ -4,10 +4,10 @@ import pyodbc
 app = Flask(__name__)
 
 #Configura tu conexión a SQL Server (Tienes que cambiarlo segun en tu computadora o en tu sql server)
-server = 'localhost'  
-database = 'PreguntaaCraft'
-username = 'sa'
-password = 'Barca007'
+server = ''  
+database = ''
+username = ''
+password = ''
 connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
 #Ruta principal (menú)
